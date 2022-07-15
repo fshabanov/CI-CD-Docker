@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
+import Bookings from "./components/pages/Bookings";
+import Home from "./components/pages/Home";
+import SignIn from "./components/pages/SignIn";
+import SignUp from "./components/pages/SignUp";
+import TripPage from "./components/pages/TripPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="sign-up" element={<SignUp />} />
+					<Route path="sign-in" element={<SignIn />} />
+					<Route path="trip/:id" element={<TripPage />} />
+					<Route path="bookings" element={<Bookings />} />
+					<Route path="*" element={<Navigate to="/" />} />
+				</Routes>
+			</BrowserRouter>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
