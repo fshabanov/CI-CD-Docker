@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Modal from "src/components/Modal";
 import { ITrip } from "src/@types";
+import "src/assets/css/tripPage.css";
 
 const TripPage: React.FC = () => {
 	const [showModal, setShowModal] = useState(false);

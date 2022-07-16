@@ -1,5 +1,6 @@
 import React from "react";
 import heart from "src/assets/images/heart.svg";
+import "src/assets/css/footer.css";
 
 const Footer: React.FC = () => {
 	return (

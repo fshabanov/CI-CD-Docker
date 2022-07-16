@@ -5,6 +5,7 @@ import { ITrip } from "src/@types";
 import trips from "src/data/trips.json";
 import filterDuration from "src/helpers/filterDuration";
 import Trip from "./Trip";
+import "src/assets/css/trips.css";
 
 interface Props {
 	search: string;

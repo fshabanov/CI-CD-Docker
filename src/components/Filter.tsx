@@ -1,4 +1,5 @@
 import React from "react";
+import "src/assets/css/filter.css";
 
 interface Props {
 	search: string;
@@ -24,6 +25,7 @@ const Filter: React.FC<Props> = ({
 				<label className="trips-filter__search input">
 					<span className="visually-hidden">Search by name</span>
 					<input
+						id="search-input"
 						name="search"
 						type="search"
 						placeholder="search by title"

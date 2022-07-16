@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import briefcase from "src/assets/images/briefcase.svg";
 import profile from "src/assets/images/user.svg";
 import useRouter from "src/hooks/useRouter";
+import "src/assets/css/header.css";
 
 interface Props {}
 

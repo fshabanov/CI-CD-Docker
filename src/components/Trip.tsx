@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ITrip } from "src/@types";
+import "src/assets/css/trip.css";
 
 interface Props {
 	trip: ITrip;

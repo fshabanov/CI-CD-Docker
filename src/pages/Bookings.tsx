@@ -1,6 +1,7 @@
 import React from "react";
 import { IBooking } from "src/@types";
 import bookings from "src/data/bookings.json";
+import "src/assets/css/booking.css";
 
 const Bookings: React.FC = () => {
 	const [bookingsToShow, setBookingsToShow] =

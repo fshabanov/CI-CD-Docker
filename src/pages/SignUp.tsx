@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import isValidEmail from "src/helpers/isValidEmail";
 import useRouter from "src/hooks/useRouter";
+import "src/assets/css/sign.css";
 
 const SignUp: React.FC = () => {
 	const [name, setName] = useState("");

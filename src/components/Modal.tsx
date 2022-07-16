@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ITrip } from "src/@types";
+import "src/assets/css/modal.css";
 
 interface Props {
 	trip: ITrip;
