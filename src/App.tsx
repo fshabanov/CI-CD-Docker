@@ -9,20 +9,18 @@ import TripPage from "./components/pages/TripPage";
 
 function App() {
 	return (
-		<div className="App">
-			<BrowserRouter>
-				<Header />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="sign-up" element={<SignUp />} />
-					<Route path="sign-in" element={<SignIn />} />
-					<Route path="trip/:id" element={<TripPage />} />
-					<Route path="bookings" element={<Bookings />} />
-					<Route path="*" element={<Navigate to="/" />} />
-				</Routes>
-			</BrowserRouter>
+		<BrowserRouter>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="sign-up" element={<SignUp />} />
+				<Route path="sign-in" element={<SignIn />} />
+				<Route path="trip/:id" element={<TripPage />} />
+				<Route path="bookings" element={<Bookings />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
 			<Footer />
-		</div>
+		</BrowserRouter>
 	);
 }
 

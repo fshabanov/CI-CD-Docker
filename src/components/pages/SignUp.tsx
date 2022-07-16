@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import isValidEmail from "src/helpers/isValidEmail";
 import useRouter from "src/hooks/useRouter";
-interface Props {}
 
-const SignUp: React.FC<Props> = () => {
+const SignUp: React.FC = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
+	const [emailError, setEmailError] = useState("");
 	const { navigate } = useRouter();
+
 	const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!isValidEmail(email)) {
+			setEmailError("Invalid email");
+			return;
+		}
 		navigate("/");
 	};
 	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-		setEmail(e.target.value);
-
-	const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) =>
 		setName(e.target.value);
+
+	const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setEmailError("");
+		setEmail(e.target.value);
+	};
 
 	return (
 		<main className="sign-up-page">
@@ -40,7 +48,9 @@ const SignUp: React.FC<Props> = () => {
 						required
 						value={email}
 						onChange={handleEmailChange}
+						id={emailError ? "input-error" : ""}
 					/>
+					{emailError && <span className="input__error">{emailError}</span>}
 				</label>
 				<label className="trip-popup__input input">
 					<span className="input__heading">Password</span>

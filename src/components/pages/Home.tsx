@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Filter from "../Filter";
 import Trips from "../Trips";
 
-interface Props {}
-
-const Home: React.FC<Props> = () => {
+const Home: React.FC = () => {
 	// Filter states
 	const [search, setSearch] = useState("");
 	const [duration, setDuration] = useState("");

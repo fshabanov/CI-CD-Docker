@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { ITrip } from "src/@types";
 import trips from "src/data/trips.json";
 import filterDuration from "src/helpers/filterDuration";
 import Trip from "./Trip";
@@ -12,7 +13,7 @@ interface Props {
 }
 
 const Trips: React.FC<Props> = ({ duration, level, search }) => {
-	const [filteredTrips, setFilteredTrips] = useState(trips);
+	const [filteredTrips, setFilteredTrips] = useState<ITrip[]>(trips);
 
 	useEffect(() => {
 		const filtered = trips.filter((trip) => {

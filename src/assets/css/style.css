@@ -1,7 +1,3 @@
-iframe {
-	display: none;
-}
-
 /* Table of contents
 
 - variables
@@ -426,6 +422,14 @@ select {
 .sign-up-form__link:hover,
 .sign-in-form__link:hover {
 	color: var(--color-blue-300);
+}
+
+#input-error {
+	border: 1px solid red;
+}
+
+.input__error {
+	color: red;
 }
 
 /* main-page */

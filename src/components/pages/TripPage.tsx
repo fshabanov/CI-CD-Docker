@@ -4,10 +4,9 @@ import trips from "src/data/trips.json";
 import { useEffect } from "react";
 import { useState } from "react";
 import Modal from "src/components/Modal";
+import { ITrip } from "src/@types";
 
-interface Props {}
-
-const TripPage: React.FC<Props> = () => {
+const TripPage: React.FC = () => {
 	const [showModal, setShowModal] = useState(false);
 
 	const { query, navigate } = useRouter();
@@ -18,8 +17,7 @@ const TripPage: React.FC<Props> = () => {
 			navigate("/");
 		}
 	}, []);
-	if (!trip) return null;
-	const { title, price, description, image, duration, level } = trip;
+	const { title, price, description, image, duration, level } = trip as ITrip;
 
 	const handleOpenModal = () => setShowModal(true);
 	const handleCloseModal = () => setShowModal(false);
@@ -51,7 +49,7 @@ const TripPage: React.FC<Props> = () => {
 					</div>
 				</div>
 			</main>
-			{showModal && <Modal trip={trip} onClose={handleCloseModal} />}
+			{showModal && <Modal trip={trip as ITrip} onClose={handleCloseModal} />}
 		</>
 	);
 };

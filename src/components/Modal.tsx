@@ -13,7 +13,7 @@ const Modal: React.FC<Props> = ({ trip, onClose }) => {
 	const { title, price, duration, level } = trip;
 
 	const handleGuestsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setNumOfGuests(Number(+e.target.value));
+		setNumOfGuests(+e.target.value);
 	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
