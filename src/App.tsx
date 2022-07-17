@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Suspense from "./components/Suspense";
 const Footer = React.lazy(() => import("./components/common/Footer"));
 const Header = React.lazy(() => import("./components/common/Header"));
 const Bookings = React.lazy(() => import("./pages/Bookings"));
@@ -16,41 +17,41 @@ function App() {
 				<Route
 					path="/"
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<Suspense>
 							<Home />
-						</React.Suspense>
+						</Suspense>
 					}
 				/>
 				<Route
 					path="sign-up"
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<Suspense>
 							<SignUp />
-						</React.Suspense>
+						</Suspense>
 					}
 				/>
 				<Route
 					path="sign-in"
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<Suspense>
 							<SignIn />
-						</React.Suspense>
+						</Suspense>
 					}
 				/>
 				<Route
 					path="trip/:id"
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<Suspense>
 							<TripPage />
-						</React.Suspense>
+						</Suspense>
 					}
 				/>
 				<Route
 					path="bookings"
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<Suspense>
 							<Bookings />
-						</React.Suspense>
+						</Suspense>
 					}
 				/>
 				<Route path="*" element={<Navigate to="/" />} />

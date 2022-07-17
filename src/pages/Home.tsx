@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Filter from "../components/Filter";
-import Trips from "../components/Trips";
+import Trips from "../components/trip/Trips";
 
 const Home: React.FC = () => {
 	// Filter states

@@ -6,6 +6,7 @@ import { useState } from "react";
 import Modal from "src/components/Modal";
 import { ITrip } from "src/@types";
 import "src/assets/css/tripPage.css";
+import NewTrip from "src/components/trip/NewTrip";
 
 const TripPage: React.FC = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -50,7 +51,11 @@ const TripPage: React.FC = () => {
 					</div>
 				</div>
 			</main>
-			{showModal && <Modal trip={trip as ITrip} onClose={handleCloseModal} />}
+			{showModal && (
+				<Modal>
+					<NewTrip trip={trip as ITrip} onClose={handleCloseModal} />
+				</Modal>
+			)}
 		</>
 	);
 };

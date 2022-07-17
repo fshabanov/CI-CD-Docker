@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import isValidEmail from "src/helpers/isValidEmail";
 import useRouter from "src/hooks/useRouter";
 import "src/assets/css/sign.css";
+import EmailInput from "src/components/input/EmailInput";
+import PasswordInput from "src/components/input/PasswordInput";
+import NameInput from "src/components/input/NameInput";
 
 const SignUp: React.FC = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const [emailError, setEmailError] = useState("");
 	const { navigate } = useRouter();
 
@@ -26,44 +30,21 @@ const SignUp: React.FC = () => {
 		setEmail(e.target.value);
 	};
 
+	const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+		setPassword(e.target.value);
+
 	return (
 		<main className="sign-up-page">
 			<h1 className="visually-hidden">Travel App</h1>
 			<form className="sign-up-form" autoComplete="off" onSubmit={handleSignUp}>
 				<h2 className="sign-up-form__title">Sign Up</h2>
-				<label className="trip-popup__input input">
-					<span className="input__heading">Full name</span>
-					<input
-						name="full-name"
-						type="text"
-						required
-						value={name}
-						onChange={handleNameChange}
-					/>
-				</label>
-				<label className="trip-popup__input input">
-					<span className="input__heading">Email</span>
-					<input
-						name="email"
-						type="email"
-						required
-						value={email}
-						onChange={handleEmailChange}
-						id={emailError ? "input-error" : ""}
-					/>
-					{emailError && <span className="input__error">{emailError}</span>}
-				</label>
-				<label className="trip-popup__input input">
-					<span className="input__heading">Password</span>
-					<input
-						name="password"
-						type="password"
-						autoComplete="new-password"
-						required
-						minLength={3}
-						maxLength={20}
-					/>
-				</label>
+				<NameInput value={name} onChange={handleNameChange} />
+				<EmailInput
+					value={email}
+					onChange={handleEmailChange}
+					error={emailError}
+				/>
+				<PasswordInput value={password} onChange={handlePasswordChange} />
 				<button className="button" type="submit">
 					Sign Up
 				</button>
