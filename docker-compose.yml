@@ -1,0 +1,6 @@
+version: '3.9'
+services:
+  api:
+    image: 'fshabanov/docker-hw'
+    ports:
+      - '80:80'
